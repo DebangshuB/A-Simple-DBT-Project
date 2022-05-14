@@ -1,7 +1,7 @@
 # A Simple DBT Project
 
 ## ER Diagram
-![ER Diagram](../Images/ER.png)
+![ER Diagram](Images/ER.png)
 
 ## Questions
 
