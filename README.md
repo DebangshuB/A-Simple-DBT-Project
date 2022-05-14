@@ -12,11 +12,11 @@ I've approached this project as a business problem that I'll answer question by 
 
 ## Questions
 
-### Which product has the maximum profit margin ?
+### Q1: Which product has the maximum profit margin ?
 * Using `products` we can calculate column `maxProfitMargin` as `MSRP - buyPrice`.
   * We use `product_profit_margin.sql` to do this task.
 
-### Most profitable customer ?
+### Q2: Most profitable customer ?
 * Table `orderdetails` contains columns `orderNumber`, `productCode` and `quantityOrdered`.
   * Using column `productCode` and table `products` we can get the buy price of products.
   * Using `buyPrice`, `priceEach` and `quantityOrdered` we get `profitMargin` for every `orderNumber`.
@@ -25,22 +25,22 @@ I've approached this project as a business problem that I'll answer question by 
   * We can finally calculate `profitMargin` for each `customerNumber`.
     * We do this in `customer_max_profit.sql`
   
-### Most profitable order ?
+### Q3: Most profitable order ?
 * Using `order_profit_margin.sql` grouping on `orderNumber`.
 * We do this in `order_max_profit.sql`
 
-### What are the average delays in shipping products ?
+### Q4: What are the average delays in shipping products ?
 * Using `orders` we can get the shipping delay.
 * Using `orders` and `orderdetails` we get delay for `productCode`.
 * Using `products` and the previous result we get our final table.
 * We do this with `product_shipping_delay.sql`.
 
-### Most profitable sales rep ?
+### Q5: Most profitable sales rep ?
 * Using `customer_max_profit` and `customers` we get `salesRepEmployeeNumber`.
 * Then we can use aggregation to find the most profitable sales rep.
 * We do this in `most_profitable_salesman.sql`
 
-### Most profitable sales office ?
+### Q6: Most profitable sales office ?
 * Using `most_profitable_salesman.sql` and `employees` we get `officeCode`.
 * Aggregation gives us total profit by office.
 * We use `most_profitable_office.sql` to do this.
